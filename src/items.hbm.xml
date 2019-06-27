@@ -1,0 +1,24 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"classpath://org/hibernate/hibernate-mapping-3.0.dtd">  
+  
+ <hibernate-mapping>  
+  <class name="com.wms.pojo.Items" table="items">  
+    <id name="itemId" type="java.lang.Integer"> 
+    	<column name="item_id" /> 	 
+     <generator class="identity"></generator>  
+    </id>  
+            
+    <property name="name" type="string" 	column = "name"></property>  
+    <property name="description" type="string" column = "description"></property>  
+    <property name="barcode" type="string" column = "barcode"></property>  
+    <property name="price" type="double" column = "price"></property>  
+    <property name="weight" type="double" column = "weight"></property>  
+   
+    
+    
+  </class>  
+            
+ </hibernate-mapping>  
+ 

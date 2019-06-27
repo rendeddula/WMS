@@ -1,0 +1,22 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"classpath://org/hibernate/hibernate-mapping-3.0.dtd">  
+  
+ <hibernate-mapping>  
+  <class name="com.wms.pojo.WMInventory" table="wm_inventory">  
+    <id name="inventoryId" type="java.lang.Integer"> 
+    	<column name="inventory_id" /> 	 
+     <generator class="identity"></generator>  
+    </id>  
+            
+    <property name="itemId" type="java.lang.Integer" 	column = "item_id"></property>  
+    <property name="locationId" type="java.lang.Integer" column = "location_id"></property>  
+    <property name="availableqty" type="string" column = "available_qty"></property>  
+    <property name="allocatedqty" type="string" column = "allocated_qty"></property>  
+   
+     
+  </class>  
+            
+ </hibernate-mapping>  
+ 

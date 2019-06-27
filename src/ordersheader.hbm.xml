@@ -1,0 +1,32 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"classpath://org/hibernate/hibernate-mapping-3.0.dtd">  
+  
+ <hibernate-mapping>  
+  <class name="com.wms.pojo.OrdersHeader" table="order_header">  
+    <id name="orderHeaderId" type="java.lang.Integer"> 
+    	<column name="order_headerid" /> 	 
+     <generator class="identity"></generator>  
+    </id>  
+            
+    <property name="ordername" type="string" 	column = "order_name"></property>  
+    <property name="ordertype" type="string" column = "order_type"></property>  
+    <property name="shippingaddress" type="string" column = "shippingaddress"></property>  
+    <property name="destname" type="string" column = "dest_name"></property>  
+    <property name="destaddress" type="string" column = "dest_address"></property>  
+    <property name="destcity" type="string" column = "dest_city"></property>  
+    <property name="deststate" type="string" column = "dest_state"></property>  
+    <property name="destcountry" type="string" column = "dest_country"></property>  
+    <property name="pincode" type="string" column = "pincode"></property>  
+     <property name="status" type="string" column = "status"></property>  
+   
+     <set name="details" table="order_details" cascade="all" lazy="true">
+			<key column="order_headerid" />
+			<one-to-many class="com.wms.pojo.OrdersDetails"/>
+	</set>
+     
+  </class>  
+            
+ </hibernate-mapping>  
+ 

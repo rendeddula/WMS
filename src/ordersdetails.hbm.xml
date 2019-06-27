@@ -1,0 +1,24 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"classpath://org/hibernate/hibernate-mapping-3.0.dtd">  
+  
+ <hibernate-mapping>  
+  <class name="com.wms.pojo.OrdersDetails" table="order_details">  
+    <id name="detailsId" type="java.lang.Integer"> 
+    	<column name="details_id" /> 	 
+     <generator class="identity"></generator>  
+    </id>  
+            
+    <property name="headerId" type="java.lang.Integer" column = "order_headerid"  update="false" insert="false"></property>
+    <property name="item" type="string" column = "item"></property>  
+    <property name="quantity" type="string" column = "quantity"></property>  
+    <property name="packedquantity" type="string" column = "packedquantity"></property>  
+    <property name="status" type="string" column = "status"></property>  
+   
+     <many-to-one name="orderHeader" class="com.wms.pojo.OrdersHeader" column="order_headerid" cascade="all"  />
+    
+  </class>  
+            
+ </hibernate-mapping>  
+ 
